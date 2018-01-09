@@ -35,7 +35,7 @@ def pull_slack_history():
 			pull_slack_history_for_channel(channel_type, channel_id, results)
 
 	output = '\n'.join(['%s,%s' % (url, ts) for url, ts in results.items()])
-	write_file(filepath, filename, output)
+	write_file(filepath, filename, output + '\n')
 
 def pull_slack_history_for_channel(channel_type, channel_id, results):
 	# add error handling
